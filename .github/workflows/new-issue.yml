@@ -14,6 +14,7 @@ jobs:
           ORGANIZATION: dvalleit
           PROJECT_NUMBER: 3
           NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh api graphql -f query='
             query($org: String!, $number: Int!){
