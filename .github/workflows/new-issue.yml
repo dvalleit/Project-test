@@ -14,8 +14,6 @@ jobs:
           ORGANIZATION: dvalleit
           PROJECT_NUMBER: 3
           NUMBER: ${{ github.event.issue.number }}
-
-      - name: Get project info
         run: |
           gh api graphql -f query='
             query($org: String!, $number: Int!){
