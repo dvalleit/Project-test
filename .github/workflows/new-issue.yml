@@ -1,7 +1,8 @@
 name: Create item in GitHub Project
 
 on:
-  issues: [ opened ]
+  issues: 
+    types: [ opened ]
 
 jobs:
   create-item:
