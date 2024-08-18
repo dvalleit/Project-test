@@ -11,11 +11,12 @@ jobs:
 
       - name: Get project data
         env:
-          ORGANIZATION: dvalleit
+          ORGANIZATION: ${{ github.repository_owner }}
           PROJECT_NUMBER: 3
           NUMBER: ${{ github.event.issue.number }}
           GH_TOKEN: ${{ github.token }}
         run: |
+          echo ${{ github.repository_owner }}
           gh api graphql -f query='
             query($org: String!, $number: Int!){
               organization(login: $org){
