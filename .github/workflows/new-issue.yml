@@ -1,0 +1,14 @@
+name: Create item in GitHub Project
+
+on:
+  issues: [ opened ]
+
+jobs:
+  create-item:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add item to GH Project
+        run: |
+          echo $NUMBER
+        env:
+          NUMBER: ${{ github.event.issue.number }}
